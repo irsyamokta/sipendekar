@@ -1,0 +1,17 @@
+{
+    "name": "SiPendekar",
+    "short_name": "SiPendekar",
+    "start_url": "/",
+    "background_color": "#FFFFFF",
+    "description": "Pendekar Banyumas PWA",
+    "display": "fullscreen",
+    "theme_color": "#FFFFFF",
+    "icons": [
+        {
+            "src": "logo.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
