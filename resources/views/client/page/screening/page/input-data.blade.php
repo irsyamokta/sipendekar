@@ -67,14 +67,14 @@
                     {{-- Second Column --}}
                     <div class="flex flex-col gap-5 lg:w-2/4">
                         <div class="flex flex-col gap-3">
-                            <label for="nomor_hp" class="text-sm">Nomor HP <span class="text-red-500">*</span></label>
+                            <label for="nomor_hp" class="text-sm">Nomor HP</label>
                             <input type="text" name="nomor_hp" inputmode="numeric" pattern="[0-9]*" maxlength="13"
-                                id="nomor_hp" class="text-sm rounded-2xl w-full lg:h-12 placeholder:text-[#C4C4C4]" value="{{ old('nomor_hp') }}" placeholder="08xxxxxxxx" required>
+                                id="nomor_hp" class="text-sm rounded-2xl w-full lg:h-12 placeholder:text-[#C4C4C4]" value="{{ old('nomor_hp') }}" placeholder="08xxxxxxxx">
                         </div>
                         <div class="flex flex-col gap-3">
-                            <label for="email" class="text-sm">Email <span class="text-red-500">*</span></label>
+                            <label for="email" class="text-sm">Email</label>
                             <input type="email" name="email" id="email" class="text-sm rounded-2xl w-full lg:h-12 placeholder:text-[#C4C4C4]"
-                                value="{{ old('email') }}" placeholder="example@gmail.com" required>
+                                value="{{ old('email') }}" placeholder="example@gmail.com">
                         </div>
                         <div class="flex flex-col gap-3">
                             <label for="alamat" class="text-sm">Alamat <span class="text-red-500">*</span></label>

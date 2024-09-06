@@ -57,13 +57,6 @@ class ScreeningController extends Controller
                 ],
                 'tanggal_lahir' => 'required|string',
                 'jenis_kelamin' => 'required|string',
-                'nomor_hp' => [
-                    'required',
-                    'string',
-                    'max:15',
-                    'regex:/^[0-9]+$/', 
-                ],
-                'email' => 'required|email|max:255',
                 'alamat' => 'required|string|max:255|regex:/^[a-zA-Z0-9\s,.\-\/]+$/',
                 'kelurahan' => [
                     'required',
@@ -86,7 +79,6 @@ class ScreeningController extends Controller
             ],[
                 'nama_lengkap.regex' => 'Nama lengkap hanya boleh mengandung huruf dan spasi.',
                 'jenis_kelamin' => 'Jenis kelamin harus dipilih.',
-                'nomor_hp.regex' => 'Nomor hp hanya boleh mengandung angka.',
                 'kelurahan.regex' => 'Kelurahan hanya boleh mengandung huruf dan spasi.',
                 'kecamatan.regex' => 'Kecamatan hanya boleh mengandung huruf dan spasi.',
                 'kabupaten.regex' => 'Kabupaten hanya boleh mengandung huruf dan spasi.',
@@ -108,8 +100,8 @@ class ScreeningController extends Controller
             $peserta->nama_lengkap = $request->nama_lengkap;
             $peserta->tanggal_lahir = $request->tanggal_lahir;
             $peserta->jenis_kelamin = $request->jenis_kelamin;
-            $peserta->nomor_hp = $request->nomor_hp;
-            $peserta->email = $request->email;
+            $peserta->nomor_hp = $request->nomor_hp ?? '-';
+            $peserta->email = $request->email ?? '-';
             $peserta->alamat = $request->alamat;
             $peserta->kelurahan = $request->kelurahan;
             $peserta->kecamatan = $request->kecamatan;
