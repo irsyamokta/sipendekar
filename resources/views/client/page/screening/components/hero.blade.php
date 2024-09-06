@@ -9,8 +9,6 @@
                 <li class="text-xs md:text-sm xl:text-base 2xl:text-lg delay-[700ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0 [animation-iteration-count:infinite]" data-taos-offset="0">Lengkapi data diri secara lengkap dan sesuai dengan data peserta tes.</li>
                 <li class="text-xs md:text-sm xl:text-base 2xl:text-lg delay-[700ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0 [animation-iteration-count:infinite]" data-taos-offset="0">Jawab secara jujur sesuai dengan kepribadian Anda.</li>
                 <li class="text-xs md:text-sm xl:text-base 2xl:text-lg delay-[700ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0 [animation-iteration-count:infinite]" data-taos-offset="0">Tidak ada jawaban benar atau salah dan tidak ada batasan waktu pengerjaan.</li>
-                <li class="text-xs md:text-sm xl:text-base 2xl:text-lg delay-[700ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0 [animation-iteration-count:infinite]" data-taos-offset="0">Hasil tes dapat dilihat setelah mengisi semua pertanyaan dengan lengkap.</li>
-                <li class="text-xs md:text-sm xl:text-base 2xl:text-lg delay-[700ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0 [animation-iteration-count:infinite]" data-taos-offset="0">Hasil tes juga terkirim secara otomatis melalui email yang diisi pada formulir data diri.</li>
             </ul>
             <a href="{{ route('pinScreening') }}" class="mt-5 md:mt-8 w-30 2xl:w-40 2xl:h-12 2xl:text-lg py-2 bg-gradient-to-r from-accent to-secondary text-sm text-center text-white rounded-[30px] delay-[700ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0 [animation-iteration-count:infinite]" data-taos-offset="0">Mulai Tes</a>
         </div>
