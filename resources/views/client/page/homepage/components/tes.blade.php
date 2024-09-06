@@ -1,7 +1,7 @@
 <section id="test" class="flex justify-center items-center md:h-[50vh] py-15 lg:py-0 lg:h-[100vh]">
     <div class="flex flex-col justify-center items-center px-4 md:mx-12 lg:w-full">
         <div class="flex flex-col items-center gap-2 text-center">
-            <p class="xl:text-xl2xl:text-2xl font-semibold delay-[400ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0 [animation-iteration-count:infinite]" data-taos-offset="100">Mulai Tes</p>
+            <p class="xl:text-xl 2xl:text-2xl font-semibold delay-[400ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0 [animation-iteration-count:infinite]" data-taos-offset="100">Mulai Tes</p>
             <h1 class="text-2xl md:text-3xl xl:text-[40px] 2xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary delay-[500ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0 [animation-iteration-count:infinite]" data-taos-offset="100">Pendeteksian Kesehatan Mental Sekarang</h1>
         </div>
         <div class="mt-6">
