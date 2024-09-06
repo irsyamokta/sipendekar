@@ -311,19 +311,19 @@ class ScreeningController extends Controller
             }
         }
 
-        if ($request->session()->get('email_sent', false)) {
-            return $this->generateResultView($request, $participant, $img, $summary, $category);
-        }
+        // if ($request->session()->get('email_sent', false)) {
+        //     return $this->generateResultView($request, $participant, $img, $summary, $category);
+        // }
 
-        $userEmail = $participant->email;
+        // $userEmail = $participant->email;
 
-        try{
-            Mail::to($userEmail)->send(new TestResultMail($category, $img, $summary));
-        } catch(Exception $e){
-            abort(400);
-        }
+        // try{
+        //     Mail::to($userEmail)->send(new TestResultMail($category, $img, $summary));
+        // } catch(Exception $e){
+        //     abort(400);
+        // }
 
-        $request->session()->put('email_sent', true);
+        // $request->session()->put('email_sent', true);
 
         $puskesmas = DaftarPuskesmas::getDummyData();
         $perPage = 10;
