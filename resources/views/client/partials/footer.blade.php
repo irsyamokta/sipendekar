@@ -12,7 +12,7 @@
                     <a href="" class="hover:underline me-4 md:me-6">Hak Cipta</a>
                 </li>
                 <li>
-                    <a href="" class="hover:underline me-4 md:me-6">Umpan Balik</a>
+                    <a href="{{ route('feedback') }}" class="hover:underline me-4 md:me-6">Umpan Balik</a>
                 </li>
                 <li>
                     <a href="mailto:admin@sipendekar.com" class="hover:underline">Email</a>
