@@ -35,6 +35,7 @@ Route::middleware(['auth', 'verified', 'noCache'])->prefix('dashboard')->group(f
     Route::get('/report', [DashboardController::class, 'report'])->name('report');
     Route::get('/report/download/sdq', [DashboardController::class, 'sdqDownloadExcel'])->name('sdqDownloadExcel');
     Route::get('/report/download/srq', [DashboardController::class, 'srqDownloadExcel'])->name('srqDownloadExcel');
+    Route::get('/feedback', [DashboardController::class, 'feedback'])->name('viewFeedback');
 });
 
 Route::prefix('/')->group( function () {
