@@ -28,9 +28,6 @@
                 </span>
             </button>
             <!-- Hamburger Toggle BTN -->
-            <a class="block flex-shrink-0 lg:hidden" href="{{ route('dashboard') }}">
-                <h1 class="text-2xl md:text-3xl xl:text-4xl font-poppins font-bold text-dark" :class="darkMode ? 'convert' : ''">SiPendekar</h1>
-            </a>
         </div>
         <div class="flex items-center gap-3 2xsm:gap-7">
             <ul class="flex items-center gap-2 2xsm:gap-4">
