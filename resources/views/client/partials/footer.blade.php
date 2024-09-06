@@ -6,16 +6,16 @@
             </div>
             <ul class="flex flex-wrap justify-center items-center mb-2 md:mb-6 text-xs md:text-sm font-medium text-white sm:mb-0">
                 <li>
-                    <a href="" class="hover:underline me-4 md:me-6">Partner</a>
+                    <a href="https://psikologi.ump.ac.id/" target="_blank" class="hover:underline me-4 md:me-6">Partner</a>
                 </li>
                 <li>
                     <a href="" class="hover:underline me-4 md:me-6">Hak Cipta</a>
                 </li>
                 <li>
-                    <a href="" class="hover:underline me-4 md:me-6">Lisensi</a>
+                    <a href="" class="hover:underline me-4 md:me-6">Umpan Balik</a>
                 </li>
                 <li>
-                    <a href="" class="hover:underline">Email</a>
+                    <a href="mailto:admin@sipendekar.com" class="hover:underline">Email</a>
                 </li>
             </ul>
         </div>
