@@ -56,14 +56,15 @@ Route::prefix('/')->group( function () {
     });
     
     Route::prefix('/mandiri-test')->group( function () {
-        Route::get('/panduan', [HomepageController::class, 'mandiri'])->name('mandiri');
-        Route::get('/usia', [MandiriController::class, 'inputUsia'])->name('inputUsia');
-        Route::post('/usia', [MandiriController::class, 'checkUsia'])->name('checkUsia');
-        Route::get('/test', [MandiriController::class, 'questions'])->name('mandiriQuestions')->middleware(['noCache']);
-        Route::post('/result/sdq', [MandiriController::class, 'response'])->name('submitMandiriSDQ');
-        Route::post('/result/srq', [MandiriController::class, 'response'])->name('submitMandiriSRQ');
-        Route::get('/result/sdq', [MandiriController::class, 'response']);
-        Route::get('/result/srq', [MandiriController::class, 'response']);
+        Route::get('/', [HomepageController::class, 'forbidden'])->name('forbidden');
+        // Route::get('/panduan', [HomepageController::class, 'mandiri'])->name('mandiri');
+        // Route::get('/usia', [MandiriController::class, 'inputUsia'])->name('inputUsia');
+        // Route::post('/usia', [MandiriController::class, 'checkUsia'])->name('checkUsia');
+        // Route::get('/test', [MandiriController::class, 'questions'])->name('mandiriQuestions')->middleware(['noCache']);
+        // Route::post('/result/sdq', [MandiriController::class, 'response'])->name('submitMandiriSDQ');
+        // Route::post('/result/srq', [MandiriController::class, 'response'])->name('submitMandiriSRQ');
+        // Route::get('/result/sdq', [MandiriController::class, 'response']);
+        // Route::get('/result/srq', [MandiriController::class, 'response']);
     });
 });
 

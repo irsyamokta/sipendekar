@@ -24,4 +24,9 @@ class HomepageController extends Controller
         $request->session()->flush();
         return view('client.page.mandiri.page.mandiri');
     }
+    public function forbidden(Request $request)
+    {
+        $request->session()->flush();
+        return view('client.page.mandiri.page.forbidden');
+    }
 }
