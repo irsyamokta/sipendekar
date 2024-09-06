@@ -326,7 +326,7 @@ class ScreeningController extends Controller
             'query' => $request->query(),
         ]);
 
-        return view('client.page.screening.page.result', ['puskesmas' => $paginator], compact('img', 'category', 'summary'));
+        return view('client.page.screening.page.tes-info', ['puskesmas' => $paginator], compact('img', 'category', 'summary'));
     }
 
     private function generateResultView(Request $request, $participant, $img, $summary, $category)

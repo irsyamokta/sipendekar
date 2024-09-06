@@ -150,7 +150,7 @@ class MandiriController extends Controller
             }
         }
         $request->session()->flush();
-        return view('client.page.mandiri.page.result', compact('category', 'img', 'summary'));
+        return view('client.page.screening.page.tes-info', compact('category', 'img', 'summary'));
     }
     
 }
