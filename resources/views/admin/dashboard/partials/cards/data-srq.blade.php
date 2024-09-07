@@ -26,7 +26,7 @@
                     </div>
                     <form action="{{ route('report') }}" method="GET" enctype="multipart/form-data">
                         <input type="text" id="table-search" name="search_srq" value="{{ session('search_srq') }}"
-                            class="block p-2 ps-10 text-sm text-gray-900 border-none rounded-lg w-50 md:w-80 bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                            class="block p-2 ps-10 text-sm text-gray-900 border-none rounded-lg w-50 md:w-80 bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:bg-transparent focus:ring-0 focus:outline-none"
                             placeholder="Cari data">
                     </form>
                 </div>
