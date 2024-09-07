@@ -11,8 +11,8 @@
                     </div>
                     <div class="flex flex-col justify-center mt-3 md:mt-5 lg:mt-3 2xl:mt-5 items-center gap-5">
                         <h1 class="text-xl 2xl:text-3xl font-semibold">@lang('message.test.screening')</h1>
-                        <p class="text-xs 2xl:text-lg text-center px-5 md:px-9 lg:px-15 xl:px-25">@lang('message.test.description-screening')</p>
-                        <a href="{{ route('screening') }}" class="w-30 2xl:w-40 2xl:h-12 2xl:text-lg py-2 bg-gradient-to-r from-accent to-secondary text-sm text-center text-white rounded-[30px]">@lang('message.test.button')</a>
+                        <p class="text-xs 2xl:text-lg text-center px-5 md:px-9 lg:px-15 xl:px-25 md:h-[60px] 2xl:h-[90px]">@lang('message.test.description-screening')</p>
+                        <a href="{{ route('screening') }}" class="w-30 2xl:w-40 2xl:h-12 2xl:text-lg py-2 bg-gradient-to-r from-accent to-secondary text-sm text-center text-white rounded-[30px] bg-yellow-500">@lang('message.test.button')</a>
                     </div>
                     <img src="{{ asset('assets/icon/elips.png') }}" alt="" class="w-30 absolute -right-1 -bottom-2">
                 </div>
@@ -21,8 +21,8 @@
                     </div>
                     <div class="flex flex-col justify-center mt-3 md:mt-5 lg:mt-3 2xl:mt-5 items-center gap-5">
                         <h1 class="text-xl 2xl:text-3xl font-semibold">@lang('message.test.self')</h1>
-                        <p class="text-xs 2xl:text-lg text-center px-5 md:px-9 lg:px-15 xl:px-25">@lang('message.test.description-self')</p>
-                        <a href="{{ route('forbidden') }}" class="w-30 2xl:w-40 2xl:h-12 2xl:text-lg py-2 bg-gradient-to-r from-accent to-secondary text-sm text-center text-white rounded-[30px]">@lang('message.test.button')</a>
+                        <p class="text-xs 2xl:text-lg text-center px-5 md:px-9 lg:px-15 xl:px-25 md:h-[60px] 2xl:h-[90px]">@lang('message.test.description-self')</p>
+                        <a href="{{ route('forbidden') }}" class="w-30 2xl:w-40 2xl:h-12 2xl:text-lg py-2 bg-gradient-to-r from-accent to-secondary text-sm text-center text-white rounded-[30px] bg-yellow-500">@lang('message.test.button')</a>
                     </div>
                     <img src="{{ asset('assets/icon/elips.png') }}" alt="" class="w-30 absolute -right-1 -bottom-2">
                 </div>
