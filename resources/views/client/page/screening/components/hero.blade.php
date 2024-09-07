@@ -17,3 +17,24 @@
         </div>
     </div>
 </section>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function disclaimer() {
+        Swal.fire({
+            title: 'Disclaimer',
+            text: `Teman Pendekar, silakan mengisi kuesioner sesuai atau yang paling mendekati keadaan psikologi anda 6 bulan terakhir`,
+            imageUrl: "/assets/img/img-disclaimer.png",
+            imageWidth: 250,
+            imageHeight: 250,
+            imageAlt: "img danger",
+            confirmButtonText: 'Ok',
+            confirmButtonColor: '#176B87',
+        });
+    }
+    if (performance.navigation.type === performance.navigation.TYPE_BACK_FORWARD) {
+        disclaimer();
+    } else if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+    } else {
+        disclaimer(); 
+    }
+</script>
