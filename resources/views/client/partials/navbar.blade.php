@@ -8,7 +8,7 @@
                 <button type="button" data-dropdown-toggle="language-dropdown-menu"
                     class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900">
                     <img src="https://flagcdn.com/w320/id.png" alt="" class="w-4 h-4 rounded-full me-2" />
-                    Indonesia
+                    IDN
                 </button>
                 <!-- Dropdown -->
                 <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700"
@@ -21,7 +21,7 @@
                                 <div class="inline-flex items-center">
                                     <img src="https://flagcdn.com/w320/id.png" alt=""
                                         class="w-4 h-4 rounded-full me-2" />
-                                    Indonesia
+                                    IDN
                                 </div>
                             </a>
                         </li>
@@ -32,7 +32,7 @@
                                 <div class="inline-flex items-center">
                                     <img src="https://flagcdn.com/w320/gb.png" alt=""
                                         class="w-4 h-4 rounded-full me-2" />
-                                    English
+                                    ENG
                                 </div>
                             </a>
                         </li>
