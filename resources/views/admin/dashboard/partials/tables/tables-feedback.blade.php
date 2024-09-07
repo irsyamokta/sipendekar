@@ -4,13 +4,13 @@
             <th scope="col" class="px-6 py-3">
                 No
             </th>
-            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+            <th scope="col" class="px-20 py-3 whitespace-nowrap">
                 Nama Lengkap
             </th>
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" class="px-30 py-3">
                 Ulasan
             </th>
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" class="px-20 py-3">
                 Rating
             </th>
         </tr>
@@ -29,7 +29,7 @@
                     <th scope="row" class="px-6 py-4 font-regular whitespace-nowrap dark:text-white">
                         {{ $row->nama }}
                     </th>
-                    <th scope="row" class="px-6 py-4 font-regular dark:text-white">
+                    <th scope="row" class="px-3 md:px-20 py-4 font-regular dark:text-white">
                         {{ $row->ulasan }}
                     </th>
                     <th scope="row" class="px-6 py-4 font-regular whitespace-nowrap dark:text-white">
