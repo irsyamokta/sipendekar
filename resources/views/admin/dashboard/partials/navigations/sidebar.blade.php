@@ -4,7 +4,7 @@
     <!-- SIDEBAR HEADER -->
     <div class="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
         <a href="{{ route('dashboard') }}">
-            <h1 class="text-2xl md:text-3xl xl:text-4xl font-poppins font-bold text-white">SiPendekar</h1>
+            <img src="{{ asset('assets/logo/logo-horizontal-white.png') }}" alt="logo sipendekar" class="w-70">
         </a>
     </div>
     <!-- SIDEBAR HEADER -->

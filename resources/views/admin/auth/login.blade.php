@@ -20,7 +20,7 @@
                 password silakan hubungi staff bagian IT</p>
         </div>
         <div class="w-full lg:w-1/2 flex flex-col justify-center items-center py-10 gap-10">
-            <h1 class="text-5xl font-poppins font-bold text-secondary">SiPendekar</h1>
+            <img src="{{ asset('assets/logo/logo-horizontal-color.png') }}" alt="logo sipendekar" class="w-80">
             @include('admin.dashboard.partials.toast.register-toast')
             <form action="{{ route('login') }}" method="POST" enctype="multipart/form-data">
                 @csrf

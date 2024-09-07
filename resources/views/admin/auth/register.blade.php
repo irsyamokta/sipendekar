@@ -18,6 +18,7 @@
                 password silakan hubungi staff bagian IT</p>
         </div>
         <div class="w-full lg:w-1/2 flex flex-col justify-center items-center py-10 gap-10">
+            <img src="{{ asset('assets/logo/logo-horizontal-color.png') }}" alt="logo sipendekar" class="w-80">
             <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="flex flex-col justify-center items-center">

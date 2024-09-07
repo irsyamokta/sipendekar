@@ -1,7 +1,7 @@
 <nav class="bg-transparent absolute z-9999 w-full">
     <div class="flex flex-wrap items-center justify-between mx-auto md:mx-12 p-4 relative">
         <a href="" class="items-center space-x-3 rtl:space-x-reverse">
-            <h1 class="text-2xl md:text-3xl xl:text-4xl font-bold text-secondary">SiPendekar</h1>
+            <img src="{{ asset('assets/logo/logo-horizontal-color.png') }}" alt="logo sipendekar" class="w-40 lg:w-70">
         </a>
         <div class="md:flex md:gap-2 items-center">
             <div class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
