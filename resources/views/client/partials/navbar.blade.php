@@ -5,19 +5,19 @@
         </a>
         <div class="md:flex md:gap-2 items-center">
             <div class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
-                <button type="button" data-dropdown-toggle="language-dropdown-menu"
+                <button type="button" id="language-button" data-dropdown-toggle="language-dropdown-menu"
                     class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900">
-                    <img src="https://flagcdn.com/w320/id.png" alt="" class="w-4 h-4 rounded-full me-2" />
-                    IDN
+                    <img id="language-flag" src="https://flagcdn.com/w320/id.png" alt=""
+                        class="w-4 h-4 rounded-full me-2" />
+                    <span id="language-label">IDN</span>
                 </button>
                 <!-- Dropdown -->
                 <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700"
                     id="language-dropdown-menu">
                     <ul class="py-2 font-medium" role="none">
                         <li>
-                            <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary"
-                                role="menuitem">
+                            <a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary"
+                                role="menuitem" onclick="changeLanguage('id')">
                                 <div class="inline-flex items-center">
                                     <img src="https://flagcdn.com/w320/id.png" alt=""
                                         class="w-4 h-4 rounded-full me-2" />
@@ -26,9 +26,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary"
-                                role="menuitem">
+                            <a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary"
+                                role="menuitem" onclick="changeLanguage('en')">
                                 <div class="inline-flex items-center">
                                     <img src="https://flagcdn.com/w320/gb.png" alt=""
                                         class="w-4 h-4 rounded-full me-2" />
@@ -75,3 +74,29 @@
         </div>
     </div>
 </nav>
+
+<script>
+    const flagElement = document.getElementById('language-flag');
+    const labelElement = document.getElementById('language-label');
+
+    function changeLanguage(language) {
+        if (language === 'id') {
+            flagElement.src = "https://flagcdn.com/w320/id.png";
+            labelElement.textContent = "IDN";
+            localStorage.setItem('preferredLanguage', 'id');
+        } else if (language === 'en') {
+            flagElement.src = "https://flagcdn.com/w320/gb.png";
+            labelElement.textContent = "ENG";
+            localStorage.setItem('preferredLanguage', 'en');
+        }
+    }
+
+    function loadPreferredLanguage() {
+        const preferredLanguage = localStorage.getItem('preferredLanguage');
+        if (preferredLanguage) {
+            changeLanguage(preferredLanguage);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadPreferredLanguage);
+</script>
