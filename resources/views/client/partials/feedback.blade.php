@@ -10,7 +10,7 @@
     @vite(['resources/css/style.css', 'resources/js/app.js', 'resources/js/index.js', 'resources/js/script.js'])
 </head>
 
-<body class="bg-white md:bg-gradient-to-t from-soft to-white to-16%">
+<body class="bg-gradient-to-t from-soft to-white to-16%">
     <section class="h-[100vh] flex lg:flex-row">
         <div class="hidden w-full lg:w-1/2 lg:flex flex-col justify-center items-center px-16 py-16 bg-secondary">
             <a class="flex justify-center" href="https://storyset.com/online" target="_blank">
@@ -22,7 +22,7 @@
             <div class="flex px-10 w-full md:px-0 justify-center">
                 @include('client.partials.toast')
             </div>
-            <div class="flex flex-col justify-center items-center gap-5 bg-white px-10 py-5 md:px-20 md:py-10 rounded-lg md:shadow-sm">
+            <div class="flex flex-col justify-center items-center gap-5 md:bg-white px-10 py-5 md:px-20 md:py-10 rounded-lg md:shadow-sm">
                 <h1 class="text-2xl font-poppins font-bold text-secondary">Beri Umpan Balik</h1>
                 <form action="{{ route('submitFeedback') }}" method="POST" enctype="multipart/form-data">
                     @csrf
