@@ -1,6 +1,6 @@
 @if (session('success'))
     <div id="toast-success"
-        class="flex items-center w-1/2 max-w-screen p-2 text-gray-500 border border-green-300 bg-green-50 rounded-lg shadow dark:text-gray-400 dark:bg-meta-4"
+        class="flex items-center w-full md:w-3/6 p-2 text-gray-500 border border-green-300 bg-green-50 rounded-lg shadow dark:text-gray-400 dark:bg-meta-4"
         role="alert">
         <div
             class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
@@ -25,7 +25,7 @@
     </div>
 @elseif (session('error'))
 <div id="toast-warning"
-        class="flex items-center w-1/2 max-w-screen p-2 text-gray-500 border border-red-300 bg-green-50 rounded-lg shadow dark:text-gray-400 dark:bg-meta-4"
+        class="flex items-center w-full md:w-3/6 p-2 text-gray-500 border border-red-300 bg-green-50 rounded-lg shadow dark:text-gray-400 dark:bg-meta-4"
         role="alert">
         <div
             class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-red-500 bg-red-100 rounded-lg dark:bg-green-800 dark:text-green-200">
