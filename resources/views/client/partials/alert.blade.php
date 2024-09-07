@@ -2,12 +2,12 @@
 <script>
     function alertPin(message) {
         Swal.fire({
-            text: message,
+            text: '@lang('screening.pin.message')',
             imageUrl: "../assets/img/img-danger.png",
             imageWidth: 250,
             imageHeight: 250,
             imageAlt: "img danger",
-            confirmButtonText: 'Coba Lagi',
+            confirmButtonText: '@lang('screening.pin.cta')',
             confirmButtonColor: '#176B87',
         });
     }

@@ -23,7 +23,7 @@
                 @include('client.partials.toast')
             </div>
             <div class="flex flex-col justify-center items-center gap-5 md:bg-white px-10 py-5 md:px-20 md:py-10 rounded-lg md:shadow-sm">
-                <h1 class="text-2xl font-poppins font-bold text-secondary">Beri Umpan Balik</h1>
+                <h1 class="text-2xl font-poppins font-bold text-secondary">@lang('message.feedback.title')</h1>
                 <form action="{{ route('submitFeedback') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="flex flex-row-reverse justify-center items-center gap-2 mb-6">
@@ -90,20 +90,20 @@
                     </div>
                     <div class="flex flex-col justify-center items-center">
                         <div class="mb-5">
-                            <label for="name" class="text-sm">Nama</label>
+                            <label for="name" class="text-sm">@lang('message.feedback.name')</label>
                             <br>
                             <input type="text" name="name" value="{{ old('name') }}" required
                                 placeholder="Jhon Doe"
                                 class="rounded-lg w-[250px] lg:w-[300px] placeholder:text-sm placeholder:text-[#C4C4C4]">
                         </div>
                         <div class="mb-5">
-                            <label for="feedback" class="text-sm">Ulasan atau masukkan</label>
+                            <label for="feedback" class="text-sm">@lang('message.feedback.review')</label>
                             <br>
-                            <textarea type="text" rows="4" name="feedback" required placeholder="Deskripsikan pengalaman Anda"
+                            <textarea type="text" rows="4" name="feedback" required placeholder="@lang('message.feedback.placeholder')"
                                 class="rounded-lg w-[250px] lg:w-[300px] placeholder:text-sm placeholder:text-[#C4C4C4]">{{ old('feedback') }}</textarea>
                         </div>
                         <button
-                            class="w-40 h-10 mt-5 rounded-[30px] bg-secondary text-primary hover:bg-active hover:text-primary duration-300 ease-linear">Submit</button>
+                            class="w-40 h-10 mt-5 rounded-[30px] bg-secondary text-primary hover:bg-active hover:text-primary duration-300 ease-linear">@lang('message.feedback.submit')</button>
                     </div>
                 </form>
             </div>

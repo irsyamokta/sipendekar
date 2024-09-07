@@ -69,6 +69,11 @@ Route::prefix('/')->group( function () {
         // Route::get('/result/sdq', [MandiriController::class, 'response']);
         // Route::get('/result/srq', [MandiriController::class, 'response']);
     });
+    Route::get('lang/{lang}', function($lang){
+        app()->setLocale($lang);
+        session()->put('locale', $lang);
+        return redirect()->back();
+    })->name('changeLang');
 });
 
 require __DIR__.'/auth.php';
