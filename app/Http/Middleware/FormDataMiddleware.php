@@ -5,8 +5,6 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Support\Facades\Session;
-use App\Models\GeneratePin;
 
 class FormDataMiddleware
 {
@@ -17,9 +15,8 @@ class FormDataMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {   
-        $latestPinRecord = GeneratePin::orderBy('created_at', 'desc')->first();
-
-        if($latestPinRecord && $latestPinRecord->status === 'inactive'){
+        $pin = $request->session()->get('pin');
+        if(!$pin){
             return redirect()->route('pinScreening');
         }
         return $next($request);
