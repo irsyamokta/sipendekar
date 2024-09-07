@@ -19,8 +19,10 @@
             </a>
         </div>
         <div class="w-full lg:w-1/2 flex flex-col justify-center items-center lg:py-10 gap-10">
-            @include('client.partials.toast')
-            <div class="flex flex-col justify-center items-center gap-5 bg-white md:px-20 md:py-10 rounded-lg shadow-sm">
+            <div class="flex px-10 w-full md:px-0 justify-center">
+                @include('client.partials.toast')
+            </div>
+            <div class="flex flex-col justify-center items-center gap-5 bg-white px-10 py-5 md:px-20 md:py-10 rounded-lg md:shadow-sm">
                 <h1 class="text-2xl font-poppins font-bold text-secondary">Beri Umpan Balik</h1>
                 <form action="{{ route('submitFeedback') }}" method="POST" enctype="multipart/form-data">
                     @csrf
