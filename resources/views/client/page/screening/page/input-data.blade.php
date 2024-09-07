@@ -6,7 +6,7 @@
             <form action="{{ route('inputData') }}" method="POST" enctype="multipart/form-data"
                 class="flex flex-col md:items-center gap-2">
                 @csrf
-                <h1 class="font-bold mb-10 md:text-xl text-center">Lengkapi Data Diri Anda</h1>
+                <h1 class="font-bold mb-10 md:text-xl text-center">@lang('screening.form.title')</h1>
                 <div class="w-full md:px-12">
                     @if ($errors->any())
                         <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50"
@@ -32,13 +32,12 @@
                     {{-- Firts Column --}}
                     <div class="flex flex-col gap-5 lg:w-2/4">
                         <div class="flex flex-col gap-3">
-                            <label for="nama_lengkap" class="text-sm">Nama Lengkap <span
-                                    class="text-red-500">*</span></label>
+                            <label for="nama_lengkap" class="text-sm">@lang('screening.form.name')<span class="text-red-500">*</span></label>
                             <input type="text" name="nama_lengkap" id="nama_lengkap" placeholder="Jhon doe" class="text-sm rounded-2xl w-full lg:h-12 placeholder:text-[#C4C4C4]"
                                 value="{{ old('nama_lengkap') }}" required>
                         </div>
                         <div class="flex flex-col gap-3">
-                            <label for="datepicker-autohide" class="text-sm">Tanggal Lahir <span
+                            <label for="datepicker-autohide" class="text-sm">@lang('screening.form.birth')<span
                                     class="text-red-500">*</span></label>
                             <div class="relative max-w-full">
                                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -51,33 +50,33 @@
                                 <input id="datepicker-autohide" datepicker datepicker-autohide type="text"
                                     name="tanggal_lahir"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-2xl focus:ring-blue-500 focus:border-blue-500 block w-full lg:h-12 ps-10 p-2.5  placeholder:text-[#C4C4C4]"
-                                    placeholder="Pilih tanggal" value="{{ old('tanggal_lahir') }}" required>
+                                    placeholder="@lang('screening.form.date')" value="{{ old('tanggal_lahir') }}" required>
                             </div>
                         </div>
                         <div class="flex flex-col gap-3">
-                            <label for="countries" class="text-sm">Jenis Kelamin <span class="text-red-500">*</span></label>
+                            <label for="countries" class="text-sm">@lang('screening.form.gender')<span class="text-red-500">*</span></label>
                             <select id="countries" name="jenis_kelamin"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-2xl focus:ring-blue-500 focus:border-blue-500 block w-full lg:h-12 p-2.5">
-                                <option value="" selected>Pilih jenis kelamin</option>
-                                <option value="Laki - laki">Laki - laki</option>
-                                <option value="Perempuan">Perempuan</option>
+                                <option value="" selected>@lang('screening.form.select')</option>
+                                <option value="Laki - laki">@lang('screening.form.boy')</option>
+                                <option value="Perempuan">@lang('screening.form.girl')</option>
                             </select>
                         </div>
                     </div>
                     {{-- Second Column --}}
                     <div class="flex flex-col gap-5 lg:w-2/4">
                         <div class="flex flex-col gap-3">
-                            <label for="nomor_hp" class="text-sm">Nomor HP</label>
+                            <label for="nomor_hp" class="text-sm">@lang('screening.form.phone')</label>
                             <input type="text" name="nomor_hp" inputmode="numeric" pattern="[0-9]*" maxlength="13"
                                 id="nomor_hp" class="text-sm rounded-2xl w-full lg:h-12 placeholder:text-[#C4C4C4]" value="{{ old('nomor_hp') }}" placeholder="08xxxxxxxx">
                         </div>
                         <div class="flex flex-col gap-3">
-                            <label for="email" class="text-sm">Email</label>
+                            <label for="email" class="text-sm">@lang('screening.form.email')</label>
                             <input type="email" name="email" id="email" class="text-sm rounded-2xl w-full lg:h-12 placeholder:text-[#C4C4C4]"
                                 value="{{ old('email') }}" placeholder="example@gmail.com">
                         </div>
                         <div class="flex flex-col gap-3">
-                            <label for="alamat" class="text-sm">Alamat <span class="text-red-500">*</span></label>
+                            <label for="alamat" class="text-sm">@lang('screening.form.address')<span class="text-red-500">*</span></label>
                             <input type="text" name="alamat" id="alamat" class="text-sm rounded-2xl w-full lg:h-12 placeholder:text-[#C4C4C4]"
                                 value="{{ old('alamat') }}" placeholder="Jl. Mawar No. 1" required>
                         </div>
@@ -85,17 +84,17 @@
                     {{-- Third Column --}}
                     <div class="flex flex-col gap-5 lg:w-2/4">
                         <div class="flex flex-col gap-3">
-                            <label for="kelurahan" class="text-sm">Kelurahan <span class="text-red-500">*</span></label>
+                            <label for="kelurahan" class="text-sm">@lang('screening.form.ward')<span class="text-red-500">*</span></label>
                             <input type="text" name="kelurahan" id="kelurahan" class="text-sm rounded-2xl w-full lg:h-12 placeholder:text-[#C4C4C4]"
                                 value="{{ old('kelurahan') }}" placeholder="Karangklesem" required>
                         </div>
                         <div class="flex flex-col gap-3">
-                            <label for="kecamatan" class="text-sm">Kecamatan <span class="text-red-500">*</span></label>
+                            <label for="kecamatan" class="text-sm">@lang('screening.form.subdistrict')<span class="text-red-500">*</span></label>
                             <input type="text" name="kecamatan" id="kecamatan" class="text-sm rounded-2xl w-full lg:h-12 placeholder:text-[#C4C4C4]"
                                 value="{{ old('kecamatan') }}" placeholder="Purwokerto Selatan" required>
                         </div>
                         <div class="flex flex-col gap-3">
-                            <label for="kabupaten" class="text-sm">Kabupaten <span class="text-red-500">*</span></label>
+                            <label for="kabupaten" class="text-sm">@lang('screening.form.district') <span class="text-red-500">*</span></label>
                             <input type="text" name="kabupaten" id="kabupaten" class="text-sm rounded-2xl w-full lg:h-12 placeholder:text-[#C4C4C4]"
                                 value="{{ old('kabupaten') }}" placeholder="Banyumas" required>
                         </div>

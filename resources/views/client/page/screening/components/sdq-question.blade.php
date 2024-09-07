@@ -31,7 +31,7 @@
                                         <label for="tidak-benar-{{ $item->urutan }}"
                                             class="inline-flex items-center justify-center w-full p-5 xl:p-7 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:bg-green-100 peer-checked:border-secondary peer-checked:text-secondary peer-checked:font-bold hover:text-gray-600 hover:bg-gray-100">
                                             <div class="block">
-                                                <div class="w-full">Tidak Benar</div>
+                                                <div class="w-full">@lang('screening.choice-sdq.option-1')</div>
                                             </div>
                                         </label>
                                     </li>
@@ -42,7 +42,7 @@
                                         <label for="agak-benar-{{ $item->urutan }}"
                                             class="inline-flex items-center justify-center w-full p-5 xl:p-7 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:bg-green-100 peer-checked:border-secondary peer-checked:text-secondary peer-checked:font-bold hover:text-gray-600 hover:bg-gray-100">
                                             <div class="block">
-                                                <div class="w-full">Agak Benar</div>
+                                                <div class="w-full">@lang('screening.choice-sdq.option-2')</div>
                                             </div>
                                         </label>
                                     </li>
@@ -53,7 +53,7 @@
                                         <label for="selalu-benar-{{ $item->urutan }}"
                                             class="inline-flex items-center justify-center w-full p-5 xl:p-7 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:bg-green-100 peer-checked:border-secondary peer-checked:text-secondary peer-checked:font-bold hover:text-gray-600 hover:bg-gray-100">
                                             <div class="block">
-                                                <div class="w-full">Selalu Benar</div>
+                                                <div class="w-full">@lang('screening.choice-sdq.option-3')</div>
                                             </div>
                                         </label>
                                     </li>
@@ -95,7 +95,7 @@
                     form="sdq-form">
                     <span
                         class="inline-flex items-center justify-center w-30 h-15 md:w-30 md:h-15 lg:w-24 lg:h-12 xl:w-30 xl:h-15 rounded-full bg-gradient-to-t from-secondary to-accent p-2">
-                        <span class="text-white">Selesai</span>
+                        <span class="text-white">@lang('screening.choice-sdq.button')</span>
                     </span>
                 </button>
             </div>
@@ -110,7 +110,7 @@
 
     function checkAge(age) {
         Swal.fire({
-            text: `Umur Anda ${age} tahun, masuk ke dalam kategori SDQ Test`,
+            text: `@lang('screening.alert.message-sdq', ["age" => $umur])`,
             imageUrl: "/assets/img/img-sdq-test.png",
             imageWidth: 250,
             imageHeight: 250,

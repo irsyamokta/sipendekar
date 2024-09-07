@@ -13,9 +13,9 @@
 <body class="bg-gradient-to-t from-[#B4D4FF] to-white">
     <section class="flex flex-col justify-center items-center text-center h-[100vh]">
         <img src="{{ asset('assets/img/img-404.png') }}" alt="not found" class="w-56 md:w-96">
-        <h1 class="text-2xl font-bold mt-2">Bad Request</h1>
-        <p class="text-sm xl:text-base px-5 lg:px-28 mt-2 md:w-1/2">Isi permintaan tidak dapat dibaca dengan benar</p>
-        <a href="/" class="px-4 py-3 bg-[#176B87] mt-5 rounded-xl text-white">Kembali ke Homepage</a>
+        <h1 class="text-2xl font-bold mt-2">@lang('message.status.400')</h1>
+        <p class="text-sm xl:text-base px-5 lg:px-28 mt-2 md:w-1/2">@lang('message.status.msg-400')</p>
+        <a href="/" class="px-4 py-3 bg-[#176B87] mt-5 rounded-xl text-white">@lang('message.status.button')</a>
     </section>
 </body>
 </html>

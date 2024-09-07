@@ -4,9 +4,11 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 use Symfony\Component\HttpFoundation\Response;
 
-class FormDataMiddleware
+class LanguageMiddleware
 {
     /**
      * Handle an incoming request.
@@ -14,10 +16,9 @@ class FormDataMiddleware
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
-    {   
-        $pin = $request->session()->get('pin');
-        if(!$pin){
-            return redirect()->route('pinScreening');
+    {
+        if(Session::has('locale')) {
+            App::setLocale(Session::get('locale'));
         }
         return $next($request);
     }

@@ -6,16 +6,16 @@
             </div>
             <ul class="flex flex-wrap justify-center items-center mb-2 md:mb-6 text-xs md:text-sm font-medium text-white sm:mb-0">
                 <li>
-                    <a href="https://psikologi.ump.ac.id/" target="_blank" class="hover:underline me-4 md:me-6">Partner</a>
+                    <a href="https://psikologi.ump.ac.id/" target="_blank" class="hover:underline me-4 md:me-6">@lang('message.footer.partner')</a>
                 </li>
                 <li>
-                    <a href="" class="hover:underline me-4 md:me-6">Hak Cipta</a>
+                    <a href="" class="hover:underline me-4 md:me-6">@lang('message.footer.copyright')</a>
                 </li>
                 <li>
-                    <a href="{{ route('feedback') }}" class="hover:underline me-4 md:me-6">Umpan Balik</a>
+                    <a href="{{ route('feedback') }}" class="hover:underline me-4 md:me-6">@lang('message.footer.feedback')</a>
                 </li>
                 <li>
-                    <a href="mailto:admin@sipendekar.com" class="hover:underline">Email</a>
+                    <a href="mailto:admin@sipendekar.com" class="hover:underline">@lang('message.footer.email')</a>
                 </li>
             </ul>
         </div>

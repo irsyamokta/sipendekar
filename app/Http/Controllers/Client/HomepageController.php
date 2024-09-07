@@ -11,24 +11,24 @@ class HomepageController extends Controller
 {
     public function index(Request $request)
     {
-        $request->session()->flush();
+        $request->session()->forget(['success', 'token', 'pin']);
         return view('client.page.homepage.homepage');
     }
 
     public function screening(Request $request)
     {
-        $request->session()->flush();
+        $request->session()->forget(['success', 'token', 'pin']);
         return view('client.page.screening.page.screening');
     }
 
     public function mandiri(Request $request)
     {
-        $request->session()->flush();
+        $request->session()->forget(['success', 'token', 'pin']);
         return view('client.page.mandiri.page.mandiri');
     }
     public function forbidden(Request $request)
     {
-        $request->session()->flush();
+        $request->session()->forget(['success', 'token', 'pin']);
         return view('client.page.mandiri.page.forbidden');
     }
 
@@ -56,6 +56,5 @@ class HomepageController extends Controller
         }catch(Exception $e){
             return redirect()->back()->with('error', $e->getMessage())->withInput();
         }
-
     }
 }

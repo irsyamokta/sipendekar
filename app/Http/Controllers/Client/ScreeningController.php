@@ -31,8 +31,8 @@ class ScreeningController extends Controller
         $latestPin = $latestPinRecord ? $latestPinRecord->pin : null;
         $pinInput = $request->input_pin;
         
+        $request->session()->put('pin', $pinInput);
         if($latestPin && $latestPin === $pinInput && $latestPinRecord->status === 'active'){
-            $request->session()->regenerate();
             return redirect()->route('formData')->with('success', 'PIN yang anda masukkan sesuai');
         }else{
             return redirect()->back()->with('error', 'Ooppss... Pin yang Anda masukkan salah!');
