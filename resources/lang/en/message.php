@@ -59,5 +59,19 @@ return [
         'fourth' => 'There are no right or wrong answers and no time limit for processing',
         'button' => 'Start Test',
         'disclaimer' => 'Warrior Friends, please fill out the questionnaire according to or closest to your psychological state in the last 6 months'
+    ],
+    'mandiri' => [
+        'title' => 'Access Temporarily Closed',
+        'description' => 'Sorry, the Self Test feature is currently temporarily closed for an undetermined time',
+        'button' => 'Back to Home'
+    ],
+    'status' => [
+        '400' => 'Bad Request',
+        '404' => 'Page Not Found',
+        '403' => 'Access Restricted',
+        'msg-400' => 'The request body cannot be read correctly',
+        'msg-404' => 'The page you are looking for may be renamed, deleted, or may never exist on this site',
+        'msg-403' => 'The page you want to open is strictly prohibited for certain reasons',
+        'button' => 'Back to Home'
     ]
 ];

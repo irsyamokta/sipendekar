@@ -59,5 +59,19 @@ return [
         'fourth' => 'Tidak ada jawaban benar atau salah dan tidak ada batasan waktu pengerjaan',
         'button' => 'Mulai Tes',
         'disclaimer' => 'Teman Pendekar, silakan mengisi kuesioner sesuai atau yang paling mendekati keadaan psikologi anda 6 bulan terakhir'
+    ],
+    'mandiri' => [
+        'title' => 'Akses Ditutup Sementara',
+        'description' => 'Mohon maaf untuk saat ini fitur Tes Mandiri ditutup sementara hingga waktu yang belum ditentukan',
+        'button' => 'Kembali ke Beranda'
+    ],
+    'status' => [
+        '400' => 'Bad Request',
+        '404' => 'Halaman Tidak Ditemukan',
+        '403' => 'Akses Dibatasi',
+        'msg-400' => 'Isi permintaan tidak dapat dibaca dengan benar',
+        'msg-404' => 'Halaman yang Anda cari mungkin diganti namanya, dihapus, atau mungkin tidak pernah ada di situs ini',
+        'msg-403' => 'Halaman yang ingin Anda buka dilarang keras karena alasan tertentu',
+        'button' => 'Kembali ke Beranda'
     ]
 ];
