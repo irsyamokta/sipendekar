@@ -1,4 +1,4 @@
-<nav class="bg-transparent absolute z-9999 w-full">
+<nav class="bg-transparent absolute w-full">
     <div class="flex flex-wrap items-center justify-between mx-auto md:mx-12 p-4 relative">
         <a href="" class="items-center space-x-3 rtl:space-x-reverse">
             <img src="{{ asset('assets/logo/logo-horizontal-color.png') }}" alt="logo sipendekar" class="w-40 lg:w-70">
