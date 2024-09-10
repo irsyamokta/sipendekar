@@ -24,7 +24,7 @@
             </div>
             <div class="flex flex-col justify-center items-center gap-5 md:bg-white px-10 py-5 md:px-20 md:py-10 rounded-lg md:shadow-sm">
                 <h1 class="text-2xl font-poppins font-bold text-secondary">@lang('message.feedback.title')</h1>
-                <form action="{{ route('submitFeedback') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('submitReview') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="flex flex-row-reverse justify-center items-center gap-2 mb-6">
                         <input id="hs-ratings-readonly-1" type="radio"

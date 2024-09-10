@@ -40,8 +40,8 @@ Route::middleware(['auth', 'verified', 'noCache'])->prefix('dashboard')->group(f
 
 Route::prefix('/')->group( function () {
     Route::get('/', [HomepageController::class, 'index'])->name('homepage');
-    Route::get('/feedback', [HomepageController::class, 'feedback'])->name('feedback');
-    Route::post('/feedback', [HomepageController::class, 'submitFeedback'])->name('submitFeedback');
+    Route::get('/review', [HomepageController::class, 'review'])->name('review');
+    Route::post('/review', [HomepageController::class, 'submitReview'])->name('submitReview');
     Route::prefix('/screening-test')->group( function () {
         Route::get('/panduan', [HomepageController::class, 'screening'])->name('screening');
         Route::get('/pin', [ScreeningController::class, 'inputPin'])->name('pinScreening');

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Feedback;
+use App\Models\Review;
 use Exception;
 
 class HomepageController extends Controller
@@ -32,11 +32,11 @@ class HomepageController extends Controller
         return view('client.page.mandiri.page.forbidden');
     }
 
-    public function feedback(){
+    public function review(){
         return view('client.partials.feedback');
     }
 
-    public function submitFeedback(Request $request){
+    public function submitReview(Request $request){
         try{
             $request->validate([
                 'name' => 'required|string|regex:/^[a-zA-Z\s]+$/',
@@ -47,7 +47,7 @@ class HomepageController extends Controller
                 'rating.required' => 'Rating harus diisi!',
             ]);
     
-            $feedback = new Feedback();
+            $feedback = new Review();
             $feedback->nama = $request->input('name');
             $feedback->ulasan = $request->input('feedback');
             $feedback->rating = $request->input('rating');
