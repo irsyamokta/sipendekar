@@ -13,6 +13,7 @@ use App\Models\InstrumenSRQ;
 use App\Models\SDQResponse;
 use App\Models\SRQResponse;
 use App\Models\Peserta;
+use App\Models\Review;
 use App\Models\Feedback;
 use Carbon\Carbon;
 
@@ -399,6 +400,7 @@ class DashboardController extends Controller
 
     public function feedback(){
         $feedback = Feedback::paginate(10);
-        return view('admin.dashboard.menu.feedback', compact('feedback'));
+        $review = Review::paginate(10);
+        return view('admin.dashboard.menu.feedback', compact('review', 'feedback'));
     }
 }

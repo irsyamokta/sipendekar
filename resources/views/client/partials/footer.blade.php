@@ -12,7 +12,7 @@
                     <a href="" class="hover:underline me-4 md:me-6">@lang('message.footer.copyright')</a>
                 </li>
                 <li>
-                    <a href="{{ route('feedback') }}" class="hover:underline me-4 md:me-6">@lang('message.footer.feedback')</a>
+                    <a href="{{ route('review') }}" class="hover:underline me-4 md:me-6">@lang('message.footer.feedback')</a>
                 </li>
                 <li>
                     <a href="mailto:admin@sipendekar.com" class="hover:underline">@lang('message.footer.email')</a>

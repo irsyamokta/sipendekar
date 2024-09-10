@@ -5,14 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Feedback extends Model
+class Review extends Model
 {
     use HasFactory;
-
-    use HasFactory;
-    protected $table = 'feedbacks';
+    protected $table = 'reviews';
     protected $primaryKey = 'id';
     protected $fillable = [
-        'nama', 'sekolah', 'umpan_balik'
+        'nama', 'ulasan', 'rating'
     ];
 }

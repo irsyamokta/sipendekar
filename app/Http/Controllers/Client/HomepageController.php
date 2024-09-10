@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Review;
 use App\Models\Feedback;
+use App\Models\Peserta;
 use Exception;
 
 class HomepageController extends Controller
@@ -32,11 +34,11 @@ class HomepageController extends Controller
         return view('client.page.mandiri.page.forbidden');
     }
 
-    public function feedback(){
+    public function review(){
         return view('client.partials.feedback');
     }
 
-    public function submitFeedback(Request $request){
+    public function submitReview(Request $request){
         try{
             $request->validate([
                 'name' => 'required|string|regex:/^[a-zA-Z\s]+$/',
@@ -46,13 +48,36 @@ class HomepageController extends Controller
                 'name.regex' => 'Nama hanya boleh mengandung huruf!',
                 'rating.required' => 'Rating harus diisi!',
             ]);
-    
+
+            $review = new Review();
+            $review->nama = $request->input('name');
+            $review->ulasan = $request->input('feedback');
+            $review->rating = $request->input('rating');
+            $review->save();
+            return redirect()->back()->with('success', 'Terima kasih atas ulasan anda');
+        }catch(Exception $e){
+            return redirect()->back()->with('error', $e->getMessage())->withInput();
+        }
+    }
+
+    public function submitFeedback(Request $request){
+        try{
+            $request->validate([
+                'name' => 'required|string|regex:/^[a-zA-Z\s]+$/',
+                'school' => 'required|string|max:255|regex:/^[a-zA-Z0-9\s,.\-\/]+$/',
+                'feedback' => 'required|string|max:255|regex:/^[a-zA-Z0-9\s,.\-\/]+$/',
+            ], [
+                'name.regex' => 'Nama hanya boleh mengandung huruf!',
+                'school.regex' => 'Asal sekolah hanya boleh mengandung huruf dan angka !',
+                'feedback.required' => 'Umpan balik harus diisi!',
+            ]);
+
             $feedback = new Feedback();
             $feedback->nama = $request->input('name');
-            $feedback->ulasan = $request->input('feedback');
-            $feedback->rating = $request->input('rating');
+            $feedback->sekolah = $request->input('school');
+            $feedback->umpan_balik = $request->input('feedback');
             $feedback->save();
-            return redirect()->back()->with('success', 'Terima kasih atas ulasan anda');
+            return redirect()->back()->with('success', 'Terima kasih atas umpan balik anda');
         }catch(Exception $e){
             return redirect()->back()->with('error', $e->getMessage())->withInput();
         }

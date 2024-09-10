@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('feedbacks', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('ulasan');
-            $table->integer('rating');
+            $table->string('sekolah');
+            $table->string('umpan_balik');
             $table->timestamps();
         });
     }
