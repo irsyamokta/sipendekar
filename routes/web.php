@@ -56,6 +56,7 @@ Route::prefix('/')->group( function () {
             Route::post('/test/srq', [ScreeningController::class, 'srqResponse'])->name('submitScreeningSRQ');
         });
         Route::get('/result', [ScreeningController::class, 'result'])->name('result');
+        Route::post('/feedback', [HomepageController::class, 'submitFeedback'])->name('submitFeedback');
     });
     
     Route::prefix('/mandiri-test')->group( function () {
