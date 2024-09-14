@@ -62,22 +62,40 @@ class HomepageController extends Controller
 
     public function submitFeedback(Request $request){
         try{
-            $request->validate([
-                'name' => 'required|string|regex:/^[a-zA-Z\s]+$/',
-                'school' => 'required|string|max:255|regex:/^[a-zA-Z0-9\s,.\-\/]+$/',
-                'feedback' => 'required|regex:/^[a-zA-Z0-9\s,.\-\/]+$/',
-            ], [
-                'name.regex' => 'Nama hanya boleh mengandung huruf!',
-                'school.regex' => 'Asal sekolah hanya boleh mengandung huruf dan angka !',
-                'feedback.required' => 'Umpan balik harus diisi!',
-            ]);
 
-            $feedback = new Feedback();
-            $feedback->nama = $request->input('name');
-            $feedback->sekolah = $request->input('school');
-            $feedback->umpan_balik = $request->input('feedback');
-            $feedback->save();
-            return redirect()->back()->with('success', 'Terima kasih atas umpan balik anda');
+            $token = $request->session()->get('token');
+            if (!$token) {
+                abort(403, 'Unauthorized access');
+            }
+
+            $participant = Peserta::where('token', $token)->first();
+
+            if (!$participant) {
+                abort(403, 'Unauthorized access');
+            }
+
+            $existingFeedback = Feedback::where('nama', $participant->nama_lengkap);
+            if ($existingFeedback && $existingFeedback->count() > 0) {
+                return redirect()->back()->with('error', 'Anda hanya dapat mengirimkan umpan balik satu kali saja');
+            } else {
+                $request->validate([
+                    'name' => 'required|string|regex:/^[a-zA-Z\s]+$/',
+                    'school' => 'required|string|max:255|regex:/^[a-zA-Z0-9\s,.\-\/]+$/',
+                    'feedback' => 'required|regex:/^[a-zA-Z0-9\s,.\-\/]+$/',
+                ], [
+                    'name.regex' => 'Nama hanya boleh mengandung huruf!',
+                    'school.regex' => 'Asal sekolah hanya boleh mengandung huruf dan angka !',
+                    'feedback.required' => 'Umpan balik harus diisi!',
+                ]);
+    
+                $feedback = new Feedback();
+                $feedback->nama = $request->input('name');
+                $feedback->sekolah = $request->input('school');
+                $feedback->umpan_balik = $request->input('feedback');
+                $feedback->save();
+                return redirect()->back()->with('success', 'Terima kasih atas umpan balik anda');
+            }
+            
         }catch(Exception $e){
             return redirect()->back()->with('error', $e->getMessage())->withInput();
         }
