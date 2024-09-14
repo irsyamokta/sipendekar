@@ -16,12 +16,9 @@ return new class extends Migration
             $table->string('nama_lengkap');
             $table->string('tanggal_lahir');
             $table->string('jenis_kelamin');
+            $table->string('sekolah');
             $table->string('nomor_hp');
             $table->string('email');
-            $table->string('alamat');
-            $table->string('kelurahan');
-            $table->string('kecamatan');
-            $table->string('kabupaten');
             $table->string('token')->unique();
 
             $table->primary('id_peserta');

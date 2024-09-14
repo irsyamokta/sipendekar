@@ -76,27 +76,9 @@
                                 value="{{ old('email') }}" placeholder="example@gmail.com">
                         </div>
                         <div class="flex flex-col gap-3">
-                            <label for="alamat" class="text-sm">@lang('screening.form.address')<span class="text-red-500">*</span></label>
-                            <input type="text" name="alamat" id="alamat" class="text-sm rounded-2xl w-full lg:h-12 placeholder:text-[#C4C4C4]"
-                                value="{{ old('alamat') }}" placeholder="Jl. Mawar No. 1" required>
-                        </div>
-                    </div>
-                    {{-- Third Column --}}
-                    <div class="flex flex-col gap-5 lg:w-2/4">
-                        <div class="flex flex-col gap-3">
-                            <label for="kelurahan" class="text-sm">@lang('screening.form.ward')<span class="text-red-500">*</span></label>
-                            <input type="text" name="kelurahan" id="kelurahan" class="text-sm rounded-2xl w-full lg:h-12 placeholder:text-[#C4C4C4]"
-                                value="{{ old('kelurahan') }}" placeholder="Karangklesem" required>
-                        </div>
-                        <div class="flex flex-col gap-3">
-                            <label for="kecamatan" class="text-sm">@lang('screening.form.subdistrict')<span class="text-red-500">*</span></label>
-                            <input type="text" name="kecamatan" id="kecamatan" class="text-sm rounded-2xl w-full lg:h-12 placeholder:text-[#C4C4C4]"
-                                value="{{ old('kecamatan') }}" placeholder="Purwokerto Selatan" required>
-                        </div>
-                        <div class="flex flex-col gap-3">
-                            <label for="kabupaten" class="text-sm">@lang('screening.form.district') <span class="text-red-500">*</span></label>
-                            <input type="text" name="kabupaten" id="kabupaten" class="text-sm rounded-2xl w-full lg:h-12 placeholder:text-[#C4C4C4]"
-                                value="{{ old('kabupaten') }}" placeholder="Banyumas" required>
+                            <label for="sekolah" class="text-sm">@lang('screening.form.school')<span class="text-red-500">*</span></label>
+                            <input type="text" name="sekolah" id="sekolah" class="text-sm rounded-2xl w-full lg:h-12 placeholder:text-[#C4C4C4]"
+                                value="{{ old('sekolah') }}" placeholder="SMA Negeri 1 Banyumas" required>
                         </div>
                     </div>
                 </div>
