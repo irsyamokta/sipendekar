@@ -3,7 +3,7 @@
     @include('client.partials.preloader')
     <section class="flex justify-center items-center h-[100vh] bg-gradient-to-t from-soft to-white">
         <div>
-            <form action="{{ route('checkPin') }}" method="POST" enctype="multipart/form-data"
+            <form action="{{ route('checkPin') }}" method="POST" enctype="multipart/form-data" autocomplete="off"
                 class="flex flex-col justify-center items-center gap-2">
                 @csrf
                 <h1 class="font-bold mb-3 xl:mb-5 md:text-xl">@lang('screening.pin.title')</h1>

@@ -3,7 +3,7 @@
     @include('client.partials.preloader')
     <section class="flex md:justify-center items-center md:h-[100vh] bg-gradient-to-t from-soft to-white">
         <div class="w-full p-5">
-            <form action="{{ route('inputData') }}" method="POST" enctype="multipart/form-data"
+            <form action="{{ route('inputData') }}" method="POST" enctype="multipart/form-data auto" autocomplete="off"
                 class="flex flex-col md:items-center gap-2">
                 @csrf
                 <h1 class="font-bold mb-10 md:text-xl text-center">@lang('screening.form.title')</h1>
