@@ -42,7 +42,7 @@ class HomepageController extends Controller
         try{
             $request->validate([
                 'name' => 'required|string|regex:/^[a-zA-Z\s]+$/',
-                'feedback' => 'required|string|max:255|regex:/^[a-zA-Z0-9\s,.\-\/]+$/',
+                'feedback' => 'required|regex:/^[a-zA-Z0-9\s,.\-\/]+$/',
                 'rating' => 'required|numeric|min:1|max:5',
             ], [
                 'name.regex' => 'Nama hanya boleh mengandung huruf!',
@@ -65,7 +65,7 @@ class HomepageController extends Controller
             $request->validate([
                 'name' => 'required|string|regex:/^[a-zA-Z\s]+$/',
                 'school' => 'required|string|max:255|regex:/^[a-zA-Z0-9\s,.\-\/]+$/',
-                'feedback' => 'required|string|max:255|regex:/^[a-zA-Z0-9\s,.\-\/]+$/',
+                'feedback' => 'required|regex:/^[a-zA-Z0-9\s,.\-\/]+$/',
             ], [
                 'name.regex' => 'Nama hanya boleh mengandung huruf!',
                 'school.regex' => 'Asal sekolah hanya boleh mengandung huruf dan angka !',
