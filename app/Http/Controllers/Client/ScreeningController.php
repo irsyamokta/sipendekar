@@ -59,6 +59,11 @@ class ScreeningController extends Controller
                 'jenis_kelamin' => 'Jenis kelamin harus dipilih.',
                 'sekolah.regex' => 'Sekolah hanya boleh mengandung huruf, angka, dan spasi.',
             ]);
+
+            $token = $request->session()->get('token');
+            if (Peserta::where('token', $token)->exists()) {
+                return redirect()->back()->withErrors(['general' => 'Anda sudah mengirimkan data sebelumnya.'])->withInput();
+            }
     
             $tanggalLahir = new \DateTime($request->tanggal_lahir);
             $today = new \DateTime();
