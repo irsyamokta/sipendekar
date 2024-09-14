@@ -121,7 +121,7 @@ class DashboardController extends Controller
             if ($searchSDQ) {
                 $query->whereHas('participant', function ($query) use ($searchSDQ) {
                     $query->where('nama_lengkap', 'like', "%{$searchSDQ}%")
-                        ->orWhere('alamat', 'like', "%{$searchSDQ}%")
+                        ->orWhere('sekolah', 'like', "%{$searchSDQ}%")
                         ->orWhere('email', 'like', "%{$searchSDQ}%")
                         ->orWhere('nomor_hp', 'like', "%{$searchSDQ}%");
                 });
@@ -138,7 +138,7 @@ class DashboardController extends Controller
             if ($searchSRQ) {
                 $query->whereHas('participant', function ($query) use ($searchSRQ) {
                     $query->where('nama_lengkap', 'like', "%{$searchSRQ}%")
-                        ->orWhere('alamat', 'like', "%{$searchSRQ}%")
+                        ->orWhere('sekolah', 'like', "%{$searchSRQ}%")
                         ->orWhere('email', 'like', "%{$searchSRQ}%")
                         ->orWhere('nomor_hp', 'like', "%{$searchSRQ}%");
                 });
@@ -210,10 +210,7 @@ class DashboardController extends Controller
                 'nama_lengkap' => $participant->nama_lengkap,
                 'usia' => $usia,
                 'jenis_kelamin' => $participant->jenis_kelamin,
-                'alamat' => $participant->alamat,
-                'kelurahan' => $participant->kelurahan,
-                'kecamatan' => $participant->kecamatan,
-                'kabupaten' => $participant->kabupaten,
+                'sekolah' => $participant->sekolah,
                 'email' => $participant->email,
                 'no_hp' => $participant->nomor_hp,
                 'jenis_tes' => $sdqResponses->first()->test_type ?? 'N/A',
@@ -264,10 +261,7 @@ class DashboardController extends Controller
                 'nama_lengkap' => $participant->nama_lengkap,
                 'usia' => $usia,
                 'jenis_kelamin' => $participant->jenis_kelamin,
-                'alamat' => $participant->alamat,
-                'kelurahan' => $participant->kelurahan,
-                'kecamatan' => $participant->kecamatan,
-                'kabupaten' => $participant->kabupaten,
+                'sekolah' => $participant->sekolah,
                 'email' => $participant->email,
                 'no_hp' => $participant->nomor_hp,
                 'jenis_tes' => 'SRQ',

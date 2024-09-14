@@ -9,10 +9,6 @@ use App\Models\InstrumenSDQ;
 use App\Models\InstrumenSRQ;
 use App\Models\SDQResponse;
 use App\Models\SRQResponse;
-use App\Models\DaftarPuskesmas;
-use Illuminate\Pagination\LengthAwarePaginator;
-use App\Mail\TestResultMail;
-use Illuminate\Support\Facades\Mail;
 use App\Models\Peserta;
 use Exception;
 use Carbon\Carbon;
@@ -57,31 +53,11 @@ class ScreeningController extends Controller
                 ],
                 'tanggal_lahir' => 'required|string',
                 'jenis_kelamin' => 'required|string',
-                'alamat' => 'required|string|max:255|regex:/^[a-zA-Z0-9\s,.\-\/]+$/',
-                'kelurahan' => [
-                    'required',
-                    'string',
-                    'max:255',
-                    'regex:/^[a-zA-Z\s]+$/',
-                ],
-                'kecamatan' => [
-                    'required',
-                    'string',
-                    'max:255',
-                    'regex:/^[a-zA-Z\s]+$/', 
-                ],
-                'kabupaten' => [
-                    'required',
-                    'string',
-                    'max:255',
-                    'regex:/^[a-zA-Z\s]+$/', 
-                ],
+                'sekolah' => 'required|string|max:255|regex:/^[a-zA-Z0-9\s,.\-\/]+$/',
             ],[
                 'nama_lengkap.regex' => 'Nama lengkap hanya boleh mengandung huruf dan spasi.',
                 'jenis_kelamin' => 'Jenis kelamin harus dipilih.',
-                'kelurahan.regex' => 'Kelurahan hanya boleh mengandung huruf dan spasi.',
-                'kecamatan.regex' => 'Kecamatan hanya boleh mengandung huruf dan spasi.',
-                'kabupaten.regex' => 'Kabupaten hanya boleh mengandung huruf dan spasi.',
+                'sekolah.regex' => 'Sekolah hanya boleh mengandung huruf, angka, dan spasi.',
             ]);
     
             $tanggalLahir = new \DateTime($request->tanggal_lahir);
@@ -102,10 +78,7 @@ class ScreeningController extends Controller
             $peserta->jenis_kelamin = $request->jenis_kelamin;
             $peserta->nomor_hp = $request->nomor_hp ?? '-';
             $peserta->email = $request->email ?? '-';
-            $peserta->alamat = $request->alamat;
-            $peserta->kelurahan = $request->kelurahan;
-            $peserta->kecamatan = $request->kecamatan;
-            $peserta->kabupaten = $request->kabupaten;
+            $peserta->sekolah = $request->sekolah;
             $peserta->token = Str::random(60);
 
             $peserta->save();
@@ -303,43 +276,6 @@ class ScreeningController extends Controller
             }
         }
 
-        // if ($request->session()->get('email_sent', false)) {
-        //     return $this->generateResultView($request, $participant, $img, $summary, $category);
-        // }
-
-        // $userEmail = $participant->email;
-
-        // try{
-        //     Mail::to($userEmail)->send(new TestResultMail($category, $img, $summary));
-        // } catch(Exception $e){
-        //     abort(400);
-        // }
-
-        // $request->session()->put('email_sent', true);
-
-        $puskesmas = DaftarPuskesmas::getDummyData();
-        $perPage = 10;
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $currentItems = array_slice($puskesmas, ($currentPage - 1) * $perPage, $perPage);
-        $paginator = new LengthAwarePaginator($currentItems, count($puskesmas), $perPage, $currentPage, [
-            'path' => $request->url(),
-            'query' => $request->query(),
-        ]);
-
-        return view('client.page.screening.page.tes-info', ['puskesmas' => $paginator], compact('img', 'category', 'summary', 'participant'));
-    }
-
-    private function generateResultView(Request $request, $participant, $img, $summary, $category)
-    {
-        $puskesmas = DaftarPuskesmas::getDummyData();
-        $perPage = 10;
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $currentItems = array_slice($puskesmas, ($currentPage - 1) * $perPage, $perPage);
-        $paginator = new LengthAwarePaginator($currentItems, count($puskesmas), $perPage, $currentPage, [
-            'path' => $request->url(),
-            'query' => $request->query(),
-        ]);
-
-        return view('client.page.screening.page.result', ['puskesmas' => $paginator], compact('img', 'category', 'summary'));
+        return view('client.page.screening.page.tes-info', compact('img', 'category', 'summary', 'participant'));
     }
 }

@@ -12,7 +12,7 @@ class Peserta extends Model
     protected $guarded = ['id_peserta'];
 
     protected $fillable = [
-        'nama_lengkap', 'tanggal_lahir', 'jenis_kelamin', 'nomor_hp', 'email', 'alamat', 'kelurahan', 'kecamatan', 'kabupaten', 'token'
+        'nama_lengkap', 'tanggal_lahir', 'jenis_kelamin', 'nomor_hp', 'email', 'sekolah', 'token'
     ];
 
     public function sdqResponses()

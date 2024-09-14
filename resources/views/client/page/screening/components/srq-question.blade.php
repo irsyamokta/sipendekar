@@ -98,7 +98,7 @@
 
     function checkAge(age) {
         Swal.fire({
-            text: `@lang('screening.alert.message-srq', ["age" => $umur])`,
+            text: `@lang('screening.alert.message-srq')`,
             imageUrl: "/assets/img/img-srq-test.png",
             imageWidth: 250,
             imageHeight: 250,

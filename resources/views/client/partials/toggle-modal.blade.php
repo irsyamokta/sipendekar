@@ -42,7 +42,7 @@
                             class="block mb-2 text-sm font-medium text-gray-900 text-start">@lang('screening.feedback.school')</label>
                         <input type="text" name="school" id="school"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
-                            placeholder="@lang('screening.feedback.placeholder-school')" required>
+                            placeholder="@lang('screening.feedback.placeholder-school')" value="{{ $participant->sekolah }}" readonly>
                     </div>
                     <div class="col-span-2">
                         <label for="feedback"

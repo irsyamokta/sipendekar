@@ -14,7 +14,7 @@
                 Jenis Kelamin
             </th>
             <th scope="col" class="px-6 py-3">
-                Alamat
+                Sekolah
             </th>
             <th scope="col" class="px-6 py-3">
                 Email
@@ -87,7 +87,7 @@
                         {{ $row['jenis_kelamin'] }}
                     </td>
                     <td class="px-6 py-4 dark:text-white whitespace-nowrap">
-                        {{ $row['alamat'] }}, <span>{{ $row['kelurahan'] }}, </span> <span>{{ $row['kecamatan'] }}, </span> <span>{{ $row['kabupaten'] }}</span>
+                        {{ $row['sekolah'] }}
                     </td>
                     <td class="px-6 py-4 dark:text-white whitespace-nowrap">
                         {{ $row['email'] }}
