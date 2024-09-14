@@ -24,8 +24,8 @@ return [
         'title_error' => 'Failed',
         'message_success' => 'Thank you for providing feedback',
         'message_error' => 'Ooppss... Make sure the data you entered is correct',
-        'message-sdq' => 'Your age :age years, you are in the category SDQ Test',
-        'message-srq' => 'Your age :age years, you are in the category SRQ Test',
+        'message-sdq' => 'Your age is included in the SDQ Test category',
+        'message-srq' => 'Your age is included in the SRQ Test category',
         'button_success' => 'Done',
         'button_error' => 'Try Again'
     ],
