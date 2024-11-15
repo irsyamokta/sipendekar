@@ -1,32 +1,44 @@
 
-# SiPendekar 
+# DolanTegal.
 
-SiPendekar adalah sebuah aplikasi web yang dirancang untuk mendeteksi gejala kesehatan mental secara dini. Website ini bertujuan untuk membantu masyarakat dalam mengenali gejala-gejala awal gangguan kesehatan mental sehingga dapat segera mendapatkan penanganan yang tepat. SiPendekar hadir sebagai solusi inovatif untuk mendukung kesehatan mental masyarakat Indonesia.
+SiPendekar is a web application designed to detect mental health symptoms early. This website aims to help people recognize the early symptoms of mental health disorders so they can immediately receive appropriate treatment. SiPendekar is here as an innovative solution to support the mental health of the Indonesian people.
 
-
-## Our Features
+## Features
 
 - Admin
+- Multi-language (currently only available in English and Indonesian)
 - Screening Test
-- Tes Mandiri
-- Hasil tes dikirim otomatis melalui email
-
-
+- Mandiri Test (next progress)
+- Progresive Web App
 
 
 ## Tech Stack
 
-PHP, Laravel, TailwindCSS, MySQL
+Laravel, TailwindCSS, MySQL, Javascript
 
+
+
+## Demo Project
+
+https://sipendekar.com
+
+
+## Preview
+
+![App Screenshot](https://github.com/irsyamokta/assets/blob/0372f64254c2f26f0881020069b57a71c72585d4/sipendekar/Cuplikan%20layar%202024-11-15%20221314.png)
+
+![App Screenshot](https://github.com/irsyamokta/assets/blob/0372f64254c2f26f0881020069b57a71c72585d4/sipendekar/Cuplikan%20layar%202024-11-15%20221343.png)
+
+![App Screenshot](https://github.com/irsyamokta/assets/blob/0372f64254c2f26f0881020069b57a71c72585d4/sipendekar/Cuplikan%20layar%202024-11-15%20221406.png)
+
+![App Screenshot](https://github.com/irsyamokta/assets/blob/0372f64254c2f26f0881020069b57a71c72585d4/sipendekar/Cuplikan%20layar%202024-11-15%20221421.png)
+
+![App Screenshot](https://github.com/irsyamokta/assets/blob/0372f64254c2f26f0881020069b57a71c72585d4/sipendekar/Cuplikan%20layar%202024-11-15%20221438.png)
+
+![App Screenshot](https://github.com/irsyamokta/assets/blob/0372f64254c2f26f0881020069b57a71c72585d4/sipendekar/Cuplikan%20layar%202024-11-15%20221500.png)
 
 
 ## Authors
 
-- Tim SiPendekar
+- [@irsyamokta](https://github.com/irsyamokta)
 
-
-
-## Badges
-
-
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
