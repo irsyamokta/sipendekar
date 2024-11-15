@@ -1,5 +1,5 @@
 
-# DolanTegal.
+# SiPendekar
 
 SiPendekar is a web application designed to detect mental health symptoms early. This website aims to help people recognize the early symptoms of mental health disorders so they can immediately receive appropriate treatment. SiPendekar is here as an innovative solution to support the mental health of the Indonesian people.
 
