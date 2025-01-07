@@ -17,7 +17,7 @@ use Illuminate\Support\Str;
 class ScreeningController extends Controller
 {
     public function inputPin()
-    {   
+    {
         return view('client.page.screening.page.input-pin');
     }
 
@@ -26,55 +26,59 @@ class ScreeningController extends Controller
         $latestPinRecord = GeneratePin::orderBy('created_at', 'desc')->first();
         $latestPin = $latestPinRecord ? $latestPinRecord->pin : null;
         $pinInput = $request->input_pin;
-        
+
         $request->session()->put('pin', $pinInput);
-        if($latestPin && $latestPin === $pinInput && $latestPinRecord->status === 'active'){
+        if ($latestPin && $latestPin === $pinInput && $latestPinRecord->status === 'active') {
             return redirect()->route('formData')->with('success', 'PIN yang anda masukkan sesuai');
-        }else{
+        } else {
             return redirect()->back()->with('error', 'Ooppss... Pin yang Anda masukkan salah!');
         }
     }
 
     public function formData(Request $request)
-    {   
+    {
         session()->flash('success');
         return view('client.page.screening.page.input-data');
     }
 
     public function inputData(Request $request)
     {
-        try{
-            $request->validate([
-                'nama_lengkap' => [
-                    'required',
-                    'string',
-                    'max:255',
-                    'regex:/^[a-zA-Z\s]+$/', 
+        try {
+            $request->validate(
+                [
+                    'nama_lengkap' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z\s]+$/'],
+                    'tanggal_lahir' => 'required|string',
+                    'jenis_kelamin' => 'required|string',
+                    'sekolah' => 'required|string|max:255|regex:/^[a-zA-Z0-9\s,.\-\/]+$/',
                 ],
-                'tanggal_lahir' => 'required|string',
-                'jenis_kelamin' => 'required|string',
-                'sekolah' => 'required|string|max:255|regex:/^[a-zA-Z0-9\s,.\-\/]+$/',
-            ],[
-                'nama_lengkap.regex' => 'Nama lengkap hanya boleh mengandung huruf dan spasi.',
-                'jenis_kelamin' => 'Jenis kelamin harus dipilih.',
-                'sekolah.regex' => 'Sekolah hanya boleh mengandung huruf, angka, dan spasi.',
-            ]);
+                [
+                    'nama_lengkap.regex' => 'Nama lengkap hanya boleh mengandung huruf dan spasi.',
+                    'jenis_kelamin' => 'Jenis kelamin harus dipilih.',
+                    'sekolah.regex' => 'Sekolah hanya boleh mengandung huruf, angka, dan spasi.',
+                ],
+            );
 
             $token = $request->session()->get('token');
             if (Peserta::where('token', $token)->exists()) {
-                return redirect()->back()->withErrors(['general' => 'Anda sudah mengirimkan data sebelumnya.'])->withInput();
+                return redirect()
+                    ->back()
+                    ->withErrors(['general' => 'Anda sudah mengirimkan data sebelumnya.'])
+                    ->withInput();
             }
-    
+
             $tanggalLahir = new \DateTime($request->tanggal_lahir);
             $today = new \DateTime();
             $interval = $today->diff($tanggalLahir);
             $umur = $interval->y;
-    
+
             if ($umur < 4) {
                 session()->keep('success');
-                return redirect()->back()->withErrors([
-                    'tanggal_lahir' => 'Umur peserta minimal 4 tahun.',
-                ])->withInput();
+                return redirect()
+                    ->back()
+                    ->withErrors([
+                        'tanggal_lahir' => 'Umur peserta minimal 4 tahun.',
+                    ])
+                    ->withInput();
             }
 
             $peserta = new Peserta();
@@ -90,21 +94,25 @@ class ScreeningController extends Controller
             $request->session()->put('token', $peserta->token);
             $request->session()->regenerate();
             session()->keep('success');
-            return redirect()->route('screeningQuestions', $peserta->token)->with('success', 'Berhasil mengisi data diri');
-
-        }catch(\Illuminate\Validation\ValidationException $e){
+            return redirect()
+                ->route('screeningQuestions', $peserta->token)
+                ->with('success', 'Berhasil mengisi data diri');
+        } catch (\Illuminate\Validation\ValidationException $e) {
             session()->keep('success');
             return redirect()->back()->withErrors($e->errors())->withInput();
-        }catch(Exception $e){
+        } catch (Exception $e) {
             session()->keep('success');
-            return redirect()->back()->withErrors([
-                'general' => 'Terjadi kesalahan saat memproses data. Silakan coba lagi.',
-            ])->withInput();
+            return redirect()
+                ->back()
+                ->withErrors([
+                    'general' => 'Terjadi kesalahan saat memproses data. Silakan coba lagi.',
+                ])
+                ->withInput();
         }
     }
 
     public function questions(Request $request)
-    {   
+    {
         session()->keep('success');
         $token = $request->session()->get('token');
         if (!$token) {
@@ -124,10 +132,8 @@ class ScreeningController extends Controller
         $sdqQuestions = collect();
         $srqQuestions = collect();
 
-        if ($umur >= 4 && $umur <= 10) {
-            $sdqQuestions = InstrumenSDQ::where('kategori', '4-10 Tahun')->get();
-        } elseif ($umur >= 11 && $umur <= 17) {
-            $sdqQuestions = InstrumenSDQ::where('kategori', '11-17 Tahun')->get();
+        if ($umur >= 4 && $umur <= 17) {
+            $sdqQuestions = InstrumenSDQ::where('kategori', '4-17 Tahun')->get();
         } else {
             $srqQuestions = InstrumenSRQ::all();
         }
@@ -135,7 +141,8 @@ class ScreeningController extends Controller
         return view('client.page.screening.page.questions', compact('sdqQuestions', 'srqQuestions', 'umur'));
     }
 
-    public function sdqResponse(Request $request){
+    public function sdqResponse(Request $request)
+    {
         session()->keep('success');
         $token = $request->session()->get('token');
         if (!$token) {
@@ -150,12 +157,12 @@ class ScreeningController extends Controller
 
         $data = $request->all();
         $testType = $request->input('test_type');
-        
+
         foreach ($data as $key => $value) {
             if (strpos($key, 'sdq-') === 0) {
                 $urutan = explode('-', $key)[1];
                 $question = InstrumenSDQ::where('urutan', $urutan)->first();
-                
+
                 if ($question) {
                     SDQResponse::create([
                         'participant_id' => $participant->id_peserta,
@@ -169,9 +176,13 @@ class ScreeningController extends Controller
             }
         }
         $request->session()->forget('success');
-        return redirect()->route('result', $participant->token)->with('done', 'Responses saved successfully');
+        return redirect()
+            ->route('result', $participant->token)
+            ->with('done', 'Responses saved successfully');
     }
-    public function srqResponse(Request $request){
+    
+    public function srqResponse(Request $request)
+    {
         session()->keep('success');
         $token = $request->session()->get('token');
         if (!$token) {
@@ -186,12 +197,12 @@ class ScreeningController extends Controller
 
         $data = $request->all();
         $testType = $request->input('test_type');
-        
+
         foreach ($data as $key => $value) {
             if (strpos($key, 'srq-') === 0) {
                 $urutan = explode('-', $key)[1];
                 $question = InstrumenSRQ::where('urutan', $urutan)->first();
-                
+
                 if ($question) {
                     SRQResponse::create([
                         'participant_id' => $participant->id_peserta,
@@ -203,12 +214,15 @@ class ScreeningController extends Controller
                 }
             }
         }
-        
+
         $request->session()->forget('success');
-        return redirect()->route('result', $participant->token)->with('done', 'Responses saved successfully');
+        return redirect()
+            ->route('result', $participant->token)
+            ->with('done', 'Responses saved successfully');
     }
 
-    public function result(Request $request){
+    public function result(Request $request)
+    {
         $token = $request->session()->get('token');
         if (!$token) {
             abort(403, 'Unauthorized access');
@@ -224,19 +238,19 @@ class ScreeningController extends Controller
         $tanggalLahirCarbon = Carbon::createFromFormat('d/m/Y', $tanggalLahir);
         $umur = $tanggalLahirCarbon->age;
 
-        if($umur <= 17){
+        if ($umur <= 17) {
             $responseSDQ = SDQResponse::where('participant_id', $participant->id_peserta)->get();
-    
+
             $domains = ['E' => 0, 'C' => 0, 'H' => 0, 'P' => 0];
-    
+
             foreach ($responseSDQ as $response) {
                 if (array_key_exists($response->domain, $domains)) {
                     $domains[$response->domain] += $response->score;
                 }
             }
-    
+
             $totalDifficultyScore = $domains['E'] + $domains['C'] + $domains['H'] + $domains['P'];
-    
+
             if ($umur < 11) {
                 if ($totalDifficultyScore >= 0 && $totalDifficultyScore <= 13) {
                     $category = 'Normal';
@@ -269,7 +283,7 @@ class ScreeningController extends Controller
         } else {
             $responseSRQ = SRQResponse::where('participant_id', $participant->id_peserta)->get();
             $responseYes = $responseSRQ->sum('score');
-            
+
             if ($responseYes >= 8) {
                 $category = 'Butuh Dukungan Lebih Lanjut';
                 $img = 'Psyco';
